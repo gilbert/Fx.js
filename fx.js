@@ -299,6 +299,14 @@ window.$fx = (function () {
 			return elm;
 	};
 
+	// Allow extension of the fx methods.
+	// yeah it's not jquery quality, but it's good enough.
+	$fx.extend = function (fns) {
+		for (var fnName in fns) {
+			fxFn[fnName] = fns[fnName];
+		}
+	};
+
 	return $fx;
 
 })();
